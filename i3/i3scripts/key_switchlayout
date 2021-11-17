@@ -1,0 +1,17 @@
+#!/bin/sh
+
+layout=$(setxkbmap -query | grep -oP 'layout:\s*\K([\w,]+)')
+
+case $layout in
+	cz)
+		layout=us
+	;;
+	us)
+		layout=cz
+	;;
+	*)
+		layout=us
+	;;
+esac
+setxkbmap -layout $layout
+
