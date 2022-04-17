@@ -249,8 +249,8 @@ bindsym $mod+x mode "$mode_runprograms"
 # virtuals
 set $mode_runvirtuals (d) debian, (a) abra
 mode "$mode_runvirtuals" {
-        bindsym d exec --no-startup-id virsh start debian10, exec virt-viewer --full-screen --domain-name debian10 --wait, mode "default"
-        bindsym a exec --no-startup-id virsh start win10, exec virt-viewer --full-screen --domain-name win10 --wait, mode "default"
+        bindsym d exec --no-startup-id virsh start debian10, exec virt-viewer --full-screen --reconnect --wait debian10, mode "default"
+        bindsym a exec --no-startup-id virsh start win10, exec virt-viewer --full-screen --reconnect --wait win10, mode "default"
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
